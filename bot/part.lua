@@ -140,7 +140,7 @@ local function is_plugin_disabled_on_chat(plugin_name, receiver)
     -- Checks if plugin is disabled on this chat
     for disabled_plugin,disabled in pairs(disabled_chats[receiver]) do
       if disabled_plugin == plugin_name and disabled then
-        local warning = 'Plugin '..disabled_plugin..' is disabled on this chat'
+        local warning = ' '
         print(warning)
         send_msg(receiver, warning, ok_cb, false)
         return true
@@ -232,32 +232,26 @@ function create_config( )
 	"whitelist",
 	"msg_checks"
     },
-    sudo_users = {110626080,103649648,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {206637124},--Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v4
-An advanced administration bot based on TG-CLI written in Lua
-
-https://github.com/SEEDTEAM/TeleSeed
-
-Admins
-@iwals [Founder]
-@imandaneshi [Developer]
-@POTUS [Developer]
-@seyedan25 [Manager]
-@aRandomStranger [Admin]
-
-Special thanks to
-awkward_potato
-Siyanew
-topkecleon
-Vamptacus
-
-Our channels
-@teleseedch [English]
-@iranseed [persian]
-
-Our website 
-http://teleseed.seedteam.org/
+    about_text = [[Part_tg
+	An anti_spam bot 
+	An advanced administration bot based on TG-CLI written in Lua.
+	
+	Git_hub : https://github.com/behradhg/Prat_tg
+	
+	SUDO :
+	@Xxx_sardar_xxX
+	@M_O_T_A_F_E_G_H_I_N
+	@bEnYaMiNa07
+	 
+	 our channel : 
+	 @Part_Team
+	 
+	our bots :
+	@PartPlus_TG
+	@part_tg
+	
 ]],
     help_text_realm = [[
 Realm Commands:
@@ -474,132 +468,134 @@ will return group ban list
 	help_text_super =[[
 SuperGroup Commands:
 
-!info
+[#!/]gpinfo
 Displays general info about the SuperGroup
 
-!admins
+[#!/]info
+Displays general info 
+
+[#!/]admins
 Returns SuperGroup admins list
 
-!owner
+[#!/]owner
 Returns group owner
 
-!modlist
+[#!/]modlist
 Returns Moderators list
 
-!bots
+[#!/]bots
 Lists bots in SuperGroup
 
-!who
+[#!/]who
 Lists all users in SuperGroup
 
-!block
+[#!/]block
 Kicks a user from SuperGroup
 *Adds user to blocked list*
 
-!ban
+[#!/]ban
 Bans user from the SuperGroup
 
-!unban
+[#!/]unban
 Unbans user from the SuperGroup
 
-!id
+[#!/]id
 Return SuperGroup ID or user id
-*For userID's: !id @username or reply !id*
+*For userID's: [#!/]id @username or reply [#!/]id*
 
-!id from
+[#!/]id from
 Get ID of user message is forwarded from
 
-!kickme
+[#!/]kickme
 Kicks user from SuperGroup
 *Must be unblocked by owner or use join by pm to return*
 
-!setowner
+[#!/]setowner
 Sets the SuperGroup owner
 
-!promote [username|id]
+[#!/]promote [username|id]
 Promote a SuperGroup moderator
 
-!demote [username|id]
+[#!/]demote [username|id]
 Demote a SuperGroup moderator
 
-!setname
+[#!/]setname
 Sets the chat name
 
-!setphoto
+[#!/]setphoto
 Sets the chat photo
 
-!setrules
+[#!/]setrules
 Sets the chat rules
 
-!setabout
+[#!/]setabout
 Sets the about section in chat info(members list)
 
-!save [value] <text>
+[#!/]save [value] <text>
 Sets extra info for chat
 
-!get [value]
+[#!/]get [value]
 Retrieves extra info for chat by value
 
-!newlink
+[#!/]newlink
 Generates a new group link
 
-!link
+[#!/]linkpv
+send link to pv
+
+[#!/]link
 Retireives the group link
 
-!rules
+[#!/]rules
 Retrieves the chat rules
 
-!lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
+[#!/]lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict|all|audio|gifs|photo|video|service|reply|fwd|bot|english]
 Lock group settings
 *rtl: Delete msg if Right To Left Char. is in name*
 *strict: enable strict settings enforcement (violating user will be kicked)*
 
-!unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
+[#!/]unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict|all|audio|gifs|photo|video|service|reply|fwd|bot|english]
 Unlock group settings
 *rtl: Delete msg if Right To Left Char. is in name*
 *strict: disable strict settings enforcement (violating user will not be kicked)*
 
-!mute [all|audio|gifs|photo|video|service]
-mute group message types
-*A "muted" message type is auto-deleted if posted
 
-!unmute [all|audio|gifs|photo|video|service]
-Unmute group message types
-*A "unmuted" message type is not auto-deleted if posted
-
-!setflood [value]
+[#!/]setflood [value]
 Set [value] as flood sensitivity
 
-!settings
+[#!/]settings
 Returns chat settings
 
-!muteslist
-Returns mutes for chat
-
-!muteuser [username]
+[#!/]muteuser [username] our [#!/]silent and [#!/]unsilent
 Mute a user in chat
 *If a muted user posts a message, the message is deleted automaically
 *only owners can mute | mods and owners can unmute
 
-!mutelist
+[#!/]mutelist
 Returns list of muted users in chat
 
-!banlist
+[#!/]banlist
 Returns SuperGroup ban list
 
-!clean [rules|about|modlist|mutelist]
+[#!/]clean [rules|about|modlist|mutelist|filterlist]
 
-!del
+[#!/]del
 Deletes a message by reply
 
-!public [yes|no]
-Set chat visibility in pm !chats or !chatlist commands
+[#!/]public [yes|no]
+Set chat visibility in pm [#!/]chats or [#!/]chatlist commands
 
-!res [username]
+[#!/]chat enable
+enable bot chat
+
+[#!/]chat disable
+disable bot chat in the group
+
+[#!/]res [username]
 Returns users name and id by username
 
 
-!log
+[#!/]log
 Returns group logs
 *Search for kick reasons using [#RTL|#spam|#lockmember]
 
