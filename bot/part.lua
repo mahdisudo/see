@@ -230,15 +230,46 @@ function create_config( )
     "leave_ban",
 	"supergroup",
 	"whitelist",
-	"msg_checks"
+	"msg_checks",
+	"active",
+	"anti_bot",
+	"anti_en",
+	"anti_fwd",
+	"yod",
+	"anti_tag",
+	"anti_user",
+	"antireply",
+	"antifosh",
+	"antiemojy",
+	"bin",
+	"bot",
+	"creatfile",
+	"del",
+	"file",
+	"filter",
+	"get_plug",
+	"jock",
+	"linkpv",
+	"load",
+	"me",
+	"pv",
+    "rm_plug",
+    "rms",
+    "settype",
+    "type",
+    "sticker",
+    "tagall",
+    "warn",
+    "write",
+    "plugins"
     },
-    sudo_users = {206637124},--Sudo users
+    sudo_users = {206637124,166053947,220371333},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[Part_tg
 	An anti_spam bot 
 	An advanced administration bot based on TG-CLI written in Lua.
 	
-	Git_hub : https://github.com/behradhg/Prat_tg
+	Git_hub : kiir
 	
 	SUDO :
 	@Xxx_sardar_xxX
