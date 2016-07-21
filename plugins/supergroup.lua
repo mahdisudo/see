@@ -3025,7 +3025,7 @@ local target = msg.to.id
 			local target = msg.to.id
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup settings ")
 			local text = show_supergroup_settingsmod(msg, target).."\n"
-			--local text = text.." "..list_variablesbad(msg)
+			local text = text.." "..list_variablesbad(msg)
 				if string.match(text, '.>') then text = string.gsub(text, '.>', 'list of filters🔍\n>') end
 
 				reply_msg(msg.id, text, ok_cb, false)
