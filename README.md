@@ -35,10 +35,6 @@ screen bash steady.sh -s
 ##behrad
 ##sohiel
  
- ##
- #
- #
- #
- #
+
  #tnx to :
  ###seed sbss shield crule creed  ub team ... 
