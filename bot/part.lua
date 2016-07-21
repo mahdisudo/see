@@ -186,7 +186,7 @@ end
 -- Save the content of _config to config.lua
 function save_config( )
   serialize_to_file(_config, './data/config.lua')
-  print ('تمام کانفینگ ها سیو شد')
+  print ('start')
 end
 
 -- Returns the config from config.lua file.
@@ -195,16 +195,35 @@ function load_config( )
   local f = io.open('./data/config.lua', "r")
   -- If config.lua doesn't exist
   if not f then
-    print ("کانفینگ جدید بسازید")
+    print ("bjbjbjbjbjbjbjbjjbjbjjbjjbjbjbjbjjbjbjb")
     create_config()
   else
     f:close()
   end
   local config = loadfile ("./data/config.lua")()
   for v,user in pairs(config.sudo_users) do
-    print("لیست مدیر ها: " .. user)
+    print('sudo : '..user)
   end
+    for v,user in pairs(config.behrad_user) do
+    print('bot owner :'..user)
+      local text = [[
+ ██████████████  ██████████████  ████████████████    ██████████████ 
+ ██          ██  ██          ██  ██            ██    ██          ██ 
+ ██  ██████  ██  ██  ██████  ██  ██  ████████  ██    ██████  ██████ 
+ ██  ██  ██  ██  ██  ██  ██  ██  ██  ██    ██  ██        ██  ██     
+ ██  ██████  ██  ██  ██████  ██  ██  ████████  ██        ██  ██     
+ ██          ██  ██          ██  ██            ██        ██  ██     
+ ██  ██████████  ██  ██████  ██  ██  ██████  ████        ██  ██     
+ ██  ██          ██  ██  ██  ██  ██  ██  ██  ██          ██  ██     
+ ██  ██          ██  ██  ██  ██  ██  ██  ██  ██████      ██  ██     
+ ██  ██          ██  ██  ██  ██  ██  ██  ██      ██      ██  ██     
+ ██████          ██████  ██████  ██████  ██████████      ██████
+  ]]
+print(text)
+
+    end
   return config
+
 end
 
 -- Create a basic config.json file and saves it.
@@ -264,7 +283,8 @@ function create_config( )
     "plugins"
 	
     },
-    sudo_users = {206637124},--Sudo users
+    behrad_user = {206637124}, --put owner id in the sudo users and behrad_user
+    sudo_users = {206637124,2211},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[Teleseed v4
 An advanced administration bot based on TG-CLI written in Lua
@@ -647,7 +667,7 @@ Returns group logs
 
 ]],
   }
-  serialize_to_file(config, './data/config.lua')
+  serialize_to_file(config, './data/partconf.lua')
   print('کانفینگ سیو شد')
 end
 
@@ -685,7 +705,6 @@ function load_plugins()
 	  print(tostring(io.popen("پلاگ/"..v..".lua"):read('*all')))
       print('\27[31m'..err..'\27[39m')
     end
-
   end
 end
 
