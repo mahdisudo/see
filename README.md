@@ -12,7 +12,7 @@ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-d
 sudo apt-get update
 sudo apt-get upgrade
 cd $HOME #if you useing c9
-git clone https://github.com/behradhg/Prat_tg
+git clone https://github.com/behradhg/Part_tg
 cd Part_tg
 chmod +x launch.sh
 ./launch.sh install
