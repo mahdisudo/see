@@ -14,9 +14,9 @@ sudo apt-get upgrade
 cd $HOME #if you useing c9
 git clone https://github.com/behradhg/Prat_tg
 cd Part_tg
-chmod +x part
-./part install
-./part # Enter a phone number & confirmation code.
+chmod +x launch.sh
+./launch.sh install
+./launch.sh # Enter a phone number & confirmation code.
 #For use seady.sh 
 
 killall screen
