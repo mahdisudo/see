@@ -20,12 +20,12 @@ install_luarocks() {
   ./configure --prefix=$PREFIX --sysconfdir=$PREFIX/luarocks --force-config
 
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    then echo "ریدی بچه."; exit $RET;
   fi
 
   make build && make install
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting.";exit $RET;
+    then echo "کیرم دهنت ریدی.";exit $RET;
   fi
 
   cd ..
@@ -35,42 +35,42 @@ install_luarocks() {
 install_rocks() {
   ./.luarocks/bin/luarocks install luasocket
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    then echo "کیرم دهنت ریدی."; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install oauth
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    then echo "کیرم دهنت ریدی."; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install redis-lua
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    then echo "کیرم دهنت ریدی."; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install lua-cjson
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    then echo "کیرم دهنت ریدی."; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install fakeredis
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    then echo "کیرم دهنت ریدی."; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install xml
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    then echo "کیرم دهنت ریدی."; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install feedparser
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    then echo "کیرم دهنت ریدی."; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install serpent
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    then echo "کیرم دهنت ریدی."; exit $RET;
   fi
 }
 
@@ -87,7 +87,7 @@ install() {
   ./configure && make
 
   RET=$?; if [ $RET -ne 0 ]; then
-    echo "Error. Exiting."; exit $RET;
+    echo "کیرم دهنت ریدی."; exit $RET;
   fi
   cd ..
   install_luarocks
@@ -100,14 +100,14 @@ elif [ "$1" = "update" ]; then
   update
 else
   if [ ! -f ./tg/telegram.h ]; then
-    echo "tg not found"
-    echo "Run $0 install"
+    echo "تخمی تیجی چیکارش کردی"
+    echo "ino bzn jendeh $0 install"
     exit 1
   fi
 
   if [ ! -f ./tg/bin/telegram-cli ]; then
     echo "tg binary not found"
-    echo "Run $0 install"
+    echo "sickter $0 install"
     exit 1
   fi
   while true; do
