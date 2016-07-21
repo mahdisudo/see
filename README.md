@@ -34,7 +34,6 @@ screen bash steady.sh -s
 #sudo user :
 ##behrad
 ##sohiel
- 
-
- #tnx to :
- ###seed sbss shield crule creed  ub team ... 
+#
+#tnx to :
+###seed sbss shield crule creed  ub team ... 
