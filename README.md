@@ -36,4 +36,6 @@ screen bash steady.sh -s
 ##sohiel
 #
 #tnx to :
-###seed sbss shield crule creed  ub team ... 
+###seed sbss shield cruel creed  ub team ... 
+
+#dont jaq
