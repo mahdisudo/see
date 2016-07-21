@@ -33,7 +33,7 @@ screen bash steady.sh -s
 ```
 #sudo user :
 ##behrad
-##sohiel
+##sohiel (Soheil)
 #
 #tnx to :
 ###seed sbss shield cruel creed  ub team ... 
