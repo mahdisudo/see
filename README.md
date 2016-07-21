@@ -16,6 +16,7 @@ git clone https://github.com/behradhg/Part_tg
 cd Part_tg
 chmod +x launch.sh
 ./launch.sh install
+sudo service redis-server start redis-cli
 ./launch.sh # Enter a phone number & confirmation code.
 #For use seady.sh 
 
