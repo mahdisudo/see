@@ -31,4 +31,6 @@ killall tmux
 screen bash steady.sh -s
 
 ```
-
+#sudo user :
+##behrad
+##sohiel
