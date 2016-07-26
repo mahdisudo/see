@@ -202,7 +202,7 @@ function load_config( )
   end
   local config = loadfile ("./data/config.lua")()
   for v,user in pairs(config.sudo_users) do
-    print('sudo : " ..user)
+    print(" sudo : " ..user)
   end
     for v,user in pairs(config.behrad_user) do
     print('bot owner :'..user)
