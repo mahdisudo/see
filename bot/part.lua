@@ -53,38 +53,38 @@ end
 function msg_valid(msg)
   -- Don't process outgoing messages
   if msg.out then
-    print('bk k bk')
+    print('\27[36mNot valid: msg from us\27[39m')
     return false
   end
 
   -- Before bot was started
   if msg.date < os.time() - 5 then
-    print('رمان متوقف شد')
+    print('\27[36mNot valid: old msg\27[39m')
     return false
   end
 
   if msg.unread == 0 then
-    print('')
+    print('\27[36mNot valid: readed\27[39m')
     return false
   end
 
   if not msg.to.id then
-    print('\27[36mفعالیت شکست خود\27[39m')
+    print('\27[36mNot valid: To id not provided\27[39m')
     return false
   end
 
   if not msg.from.id then
-    print('\27[36m وجود ندارد\27[39m')
+    print('\27[36mNot valid: From id not provided\27[39m')
     return false
   end
 
   if msg.from.id == our_id then
-    print('\27[36m  وجود ندارد\27[39m')
+    print('\27[36mNot valid: Msg from our id\27[39m')
     return false
   end
 
   if msg.to.type == 'encr_chat' then
-    print('\27[36mگروه پیدا نشد\27[39m')
+    print('\27[36mNot valid: Encrypted chat\27[39m')
     return false
   end
 
@@ -118,7 +118,7 @@ end
 function pre_process_msg(msg)
   for name,plugin in pairs(plugins) do
     if plugin.pre_process and msg then
-      print('فعالیت', name)
+      print('Preprocess', name)
       msg = plugin.pre_process(msg)
     end
   end
@@ -140,7 +140,7 @@ local function is_plugin_disabled_on_chat(plugin_name, receiver)
     -- Checks if plugin is disabled on this chat
     for disabled_plugin,disabled in pairs(disabled_chats[receiver]) do
       if disabled_plugin == plugin_name and disabled then
-        local warning = 'پلاگ'..disabled_plugin..' در گروه غیر فعال است'
+        local warning = 'Plugin '..disabled_plugin..' is disabled on this chat'
         print(warning)
         send_msg(receiver, warning, ok_cb, false)
         return true
@@ -157,7 +157,7 @@ function match_plugin(plugin, plugin_name, msg)
   for k, pattern in pairs(plugin.patterns) do
     local matches = match_pattern(pattern, msg.text)
     if matches then
-      print("مقدار پیام: ", pattern)
+      print("msg matches: ", pattern)
 
       if is_plugin_disabled_on_chat(plugin_name, receiver) then
         return nil
@@ -186,7 +186,7 @@ end
 -- Save the content of _config to config.lua
 function save_config( )
   serialize_to_file(_config, './data/config.lua')
-  print ('start')
+  print ('saved config into ./data/config.lua')
 end
 
 -- Returns the config from config.lua file.
@@ -202,18 +202,9 @@ function load_config( )
   end
   local config = loadfile ("./data/config.lua")()
   for v,user in pairs(config.sudo_users) do
-    print(" sudo : " ..user)
+    print("Sudo user: " .. user)
   end
-    for v,user in pairs(config.behrad_user) do
-    print('bot owner :'..user)
-local text = "\27[31m ██████████████  ██████████████  ████████████████    ██████████████ \n ██          ██  ██          ██  ██            ██    ██          ██ \n ██  ██████  ██  ██  ██████  ██  ██  ████████  ██    ██████  ██████\n ██  ██  ██  ██  ██  ██  ██  ██  ██  ██    ██  ██        ██  ██     "
-local text =  text.."\n ██  ██████  ██  ██  ██████  ██  ██  ████████  ██        ██  ██     \n ██          ██  ██          ██  ██            ██        ██  ██     \n ██  ██████████  ██  ██████  ██  ██  ██████  ████        ██  ██     "
-local text =  text.."\n ██  ██          ██  ██  ██  ██  ██  ██  ██  ██          ██  ██     \n ██  ██          ██  ██  ██  ██  ██  ██  ██  ██████      ██  ██     \n ██  ██          ██  ██  ██  ██  ██  ██  ██      ██      ██  ██     \n ██████          ██████  ██████  ██████  ██████████      ██████\27[39m"
-print(text)
-
-    end
   return config
-
 end
 
 -- Create a basic config.json file and saves it.
@@ -221,7 +212,7 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-	"admin",
+"admin",
     "onservice",
     "inrealm",
     "ingroup",
@@ -271,12 +262,34 @@ function create_config( )
     "warn",
     "write",
     "plugins"
-	
-    },
-    behrad_user = {24709501}, --put owner id in the sudo users and behrad_user
-    sudo_users = {24709501,2211},--Sudo users
+	    },
+    sudo_users = {24709501,0,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[]],
+    about_text = [[Teleseed v4
+An advanced administration bot based on TG-CLI written in Lua
+
+https://github.com/SEEDTEAM/TeleSeed
+
+Admins
+@iwals [Founder]
+@imandaneshi [Developer]
+@POTUS [Developer]
+@seyedan25 [Manager]
+@aRandomStranger [Admin]
+
+Special thanks to
+awkward_potato
+Siyanew
+topkecleon
+Vamptacus
+
+Our channels
+@teleseedch [English]
+@iranseed [persian]
+
+Our website 
+http://teleseed.seedteam.org/
+]],
     help_text_realm = [[
 Realm Commands:
 
@@ -365,8 +378,7 @@ Commands list :
 
 !kick [username|id]
 You can also do it by reply
-+
-++-
+
 !ban [ username|id]
 You can also do it by reply
 
@@ -633,8 +645,8 @@ Returns group logs
 
 ]],
   }
-  serialize_to_file(config, './data/partconf.lua')
-  print('کانفینگ سیو شد')
+  serialize_to_file(config, './data/config.lua')
+  print('saved config into ./data/config.lua')
 end
 
 function on_our_id (id)
@@ -659,7 +671,7 @@ end
 -- Enable plugins in config.json
 function load_plugins()
   for k, v in pairs(_config.enabled_plugins) do
-    print("بارگیری پلاگ ها", v)
+    print("Loading plugin", v)
 
     local ok, err =  pcall(function()
       local t = loadfile("plugins/"..v..'.lua')()
@@ -667,10 +679,11 @@ function load_plugins()
     end)
 
     if not ok then
-      print('ارور در بارگزاری پلاگ'..v..'\27[39m')
-	  print(tostring(io.popen("پلاگ/"..v..".lua"):read('*all')))
+      print('\27[31mError loading plugin '..v..'\27[39m')
+	  print(tostring(io.popen("lua plugins/"..v..".lua"):read('*all')))
       print('\27[31m'..err..'\27[39m')
     end
+
   end
 end
 
