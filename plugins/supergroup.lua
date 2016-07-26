@@ -1337,7 +1337,7 @@ function show_supergroup_settingsmod(msg, target)
   local text =  text.."#"..settings.lock_link.." lock links: "..settings.lock_link.."\n"
   local text =  text.."#"..settings.lock_link.." lock contact: "..settings.lock_link.."\n"
   local text =  text.."#"..settings.flood.." lock flood: "..settings.flood.."\n"
-  local text =  text.."flood : "..NUM_MSG_MAX.."\n"
+  local text =  text.."👥flood : "..NUM_MSG_MAX.."\n"
   local text =  text.."#"..settings.lock_spam.." lang name (spam): "..settings.lock_spam.."\n"
   local text =  text.."#"..settings.lock_arabic.." lock arabic: "..settings.lock_arabic.."\n"
   local text =  text.."#"..settings.lock_member.." lock member: "..settings.lock_member.."\n"
@@ -1349,8 +1349,8 @@ function show_supergroup_settingsmod(msg, target)
   local text =  text.."#"..settings.english.." lock english: "..settings.english.."\n"
   local text =  text.."#"..settings.fwd.."lock fwd: "..settings.fwd.."\n"
   local text =  text.."#"..settings.fosh.." lock fosh: "..settings.fosh.."\n"
-  local text =  text.."#"..bots_protection.." lock bots: "..bots_protection.."\n"
-  local text =  text.."\n 📚 AboutGroup :\n📚 GroupModel : "..gp_type.."\n📚 Public: "..settings.public
+  local text =  text..""..bots_protection.." lock bots: "..bots_protection.."\n"
+  local text =  text.."\n📚 AboutGroup :\n📚 GroupModel : "..gp_type.."\n📚 Public: "..settings.public
   local text = text.."\n📚 Strict: "..settings.strict.."\n📚 Switch: "..settings.lock_mod.."\n📚 BotSettings \n📚 Chat: "..settings.chat.."\n📚 Welcome:"..settings.welcome.."\n"
 	if string.match(text, 'normal') then text = string.gsub(text, 'normal', 'Nomal') end
 	if string.match(text, 'no') then text = string.gsub(text, 'no', '🔓') end
