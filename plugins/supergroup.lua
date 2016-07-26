@@ -1335,7 +1335,7 @@ function show_supergroup_settingsmod(msg, target)
  -- local text = "تنظیمات سوپرگروه:⬇️\n\n🔧قفل لینک: "..settings.lock_link.."\n🔧قفل شماره: "..settings.lock_contacts.."\n🔧قفل فلود: "..settings.flood.."\n🔧حساسیت: "..NUM_MSG_MAX.."\n🔧قفل اسپم: "..settings.lock_spam.."\n🔧قفل عربی و فارسی: "..settings.lock_arabic.."\n🔧قفل اعضا: "..settings.lock_member.."\n🔧RTL قفل: "..settings.lock_rtl.."\n🔧Tgservice قفل: "..settings.lock_tgservice.."\n🔧قفل استیکر: "..settings.lock_sticker.."\n🔧قفل تگ(#): "..settings.tag.."\n🔧قفل اموجی: "..settings.emoji.."\n🔧قفل اموجی: "..settings.english.."\n🔧قفل فرواد: "..settings.fwd.."\n🔧قفل ریپلی: "..settings.reply.."\n🔧قفل جوین: "..settings.join.."\n🔧قفل یوزرنیم(@): "..settings.username.."\n🔧media قفل: "..settings.media.."\n🔧قفل فحش: "..settings.fosh.."\n🔧قفل لفت: "..settings.leave.."\n🔧قفل ربات: "..bots_protection.."\n🔧operatorقفل: "..settings.operator.."\n\n⚙تنظیمات اسان وشیرن:⬇️\n\n>سوئچ گروه: "..settings.etehad.."\n🔧قفل همه: "..settings.all.."\n\nℹ️درباره گروهℹ️:⬇️\n\n🎯نوع گروه: "..gp_type.."\n🎯حالت عمومی: "..settings.public.."\n🎯تنظیمات دقیق: "..settings.strict.."\n\n\n@Hacker_Team"
    local text =  mutes_list(msg.to.id)
   local text =  text.."#"..settings.lock_link.." lock links: "..settings.lock_link.."\n"
-  local text =  text.."#"..settings.lock_link.." lock contact: "..settings.lock_link.."\"\n"
+  local text =  text.."#"..settings.lock_link.." lock contact: "..settings.lock_link.."\n"
   local text =  text.."#"..settings.flood.." lock flood: "..settings.flood.."\n"
   local text =  text.."🔧flood : "..NUM_MSG_MAX.."\n"
   local text =  text.."#"..settings.lock_spam.." lang name (spam): "..settings.lock_spam.."\n"
@@ -1351,7 +1351,7 @@ function show_supergroup_settingsmod(msg, target)
   local text =  text.."#"..settings.fosh.." lock fosh: "..settings.fosh.."\n"
   local text =  text.."#"..bots_protection.." lock bots: "..bots_protection.."\n"
   local text =  text.."\n about group :⬇️\n🎯group mod: "..gp_type.."\n🎯public: "..settings.public
-  local text = text.."\n🎯strict: "..settings.strict.."\n🎯stwich mod: "..settings.lock_mod.."\nBOT settings \n🎯chat: "..settings.chat.."\n🎯welcome:"..settings.welcome.."\n"
+  local text = text.."\nstrict: "..settings.strict.."\nstwich mod: "..settings.lock_mod.."\nBOT settings \nchat: "..settings.chat.."\nwelcome:"..settings.welcome.."\n"
 	if string.match(text, 'normal') then text = string.gsub(text, 'normal', 'Nomal') end
 	if string.match(text, 'no') then text = string.gsub(text, 'no', '🔓') end
 	if string.match(text, 'yes') then text = string.gsub(text, 'yes', '🔒') end
@@ -1369,7 +1369,7 @@ function show_supergroup_settingsmod(msg, target)
 	if string.match(text, 'public: 🔓') then text = string.gsub(text, 'public: 🔓', 'public: ⛔️') end
 	if string.match(text, '#🔓') then text = string.gsub(text, '#🔓', '🔧') end
 	if string.match(text, '#🔒') then text = string.gsub(text, '#🔒', '🔧') end
-	if string.match(text, 'Mutes for:') then text = string.gsub(text, 'Mutes for:', 'SUPERGROUP #settings for') end
+	if string.match(text, 'Mutes for:') then text = string.gsub(text, 'Mutes for:', 'تنظیمات سوپر گروه ') end
 	if string.match(text, 'Mute') then text = string.gsub(text, 'Mute', '🔧lock') end
   reply_msg(msg.id, text, ok_cb, false)
 end
