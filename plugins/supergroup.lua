@@ -1337,7 +1337,7 @@ function show_supergroup_settingsmod(msg, target)
   local text =  text.."#"..settings.lock_link.." lock links: "..settings.lock_link.."\n"
   local text =  text.."#"..settings.lock_link.." lock contact: "..settings.lock_link.."\n"
   local text =  text.."#"..settings.flood.." lock flood: "..settings.flood.."\n"
-  local text =  text.."🔧flood : "..NUM_MSG_MAX.."\n"
+  local text =  text.."flood : "..NUM_MSG_MAX.."\n"
   local text =  text.."#"..settings.lock_spam.." lang name (spam): "..settings.lock_spam.."\n"
   local text =  text.."#"..settings.lock_arabic.." lock arabic: "..settings.lock_arabic.."\n"
   local text =  text.."#"..settings.lock_member.." lock member: "..settings.lock_member.."\n"
@@ -1350,8 +1350,8 @@ function show_supergroup_settingsmod(msg, target)
   local text =  text.."#"..settings.fwd.."lock fwd: "..settings.fwd.."\n"
   local text =  text.."#"..settings.fosh.." lock fosh: "..settings.fosh.."\n"
   local text =  text.."#"..bots_protection.." lock bots: "..bots_protection.."\n"
-  local text =  text.."\n about group :⬇️\n🎯group mod: "..gp_type.."\n🎯public: "..settings.public
-  local text = text.."\nstrict: "..settings.strict.."\nstwich mod: "..settings.lock_mod.."\nBOT settings \nchat: "..settings.chat.."\nwelcome:"..settings.welcome.."\n"
+  local text =  text.."\n درباره گروه :\nمدل گروه : "..gp_type.."\nعمومی: "..settings.public
+  local text = text.."\nتنظیمات سختگیرانه: "..settings.strict.."\nسویچ ها: "..settings.lock_mod.."\nتنظیمات ربات \nچت: "..settings.chat.."\nخوش آمدگویی:"..settings.welcome.."\n"
 	if string.match(text, 'normal') then text = string.gsub(text, 'normal', 'Nomal') end
 	if string.match(text, 'no') then text = string.gsub(text, 'no', '🔓') end
 	if string.match(text, 'yes') then text = string.gsub(text, 'yes', '🔒') end
@@ -1367,10 +1367,10 @@ function show_supergroup_settingsmod(msg, target)
 	if string.match(text, '9') then text = string.gsub(text, '9', '9⃣') end
 	if string.match(text, 'public: 🔒') then text = string.gsub(text, 'public: 🔒', 'public: ✅') end
 	if string.match(text, 'public: 🔓') then text = string.gsub(text, 'public: 🔓', 'public: ⛔️') end
-	if string.match(text, '#🔓') then text = string.gsub(text, '#🔓', '🔧') end
-	if string.match(text, '#🔒') then text = string.gsub(text, '#🔒', '🔧') end
+	if string.match(text, '#🔓') then text = string.gsub(text, '#🔓', '') end
+	if string.match(text, '#🔒') then text = string.gsub(text, '#🔒', '') end
 	if string.match(text, 'Mutes for:') then text = string.gsub(text, 'Mutes for:', 'تنظیمات سوپر گروه ') end
-	if string.match(text, 'Mute') then text = string.gsub(text, 'Mute', '🔧lock') end
+	if string.match(text, 'Mute') then text = string.gsub(text, 'Mute', 'lock') end
   reply_msg(msg.id, text, ok_cb, false)
 end
 --wel
