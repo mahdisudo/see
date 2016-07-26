@@ -195,14 +195,14 @@ function load_config( )
   local f = io.open('./data/config.lua', "r")
   -- If config.lua doesn't exist
   if not f then
-    print ("bjbjbjbjbjbjbjbjjbjbjjbjjbjbjbjbjjbjbjb")
+    print ("Created new config file: data/config.lua")
     create_config()
   else
     f:close()
   end
   local config = loadfile ("./data/config.lua")()
   for v,user in pairs(config.sudo_users) do
-    print('sudo : '..user)
+    print('sudo : " ..user)
   end
     for v,user in pairs(config.behrad_user) do
     print('bot owner :'..user)
