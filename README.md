@@ -1,4 +1,4 @@
-# [Part-tg](https://github.com/behradhg/Prat_tg)
+
 
 
 ##for run bot
@@ -32,11 +32,4 @@ killall tmux
 screen bash steady.sh -s
 
 ```
-#sudo user :
-##behrad
-##sohiel (Soheil)
-#
-#tnx to :
-###seed sbss shield cruel creed  ub team ... 
 
-#dont jaq
