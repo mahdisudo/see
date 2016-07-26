@@ -293,7 +293,7 @@ function run(msg, matches)
 }
 
   send_typing(get_receiver(msg), ok_cb, false)
-  local text = answers[math.random(#answers)].."\n\nour channel : @Part_Team"
+  local text = answers[math.random(#answers)].."\n\سازنده : @Mehdi_Morphin"
   reply_msg(msg.id, text, ok_cb, false)
 end
 
