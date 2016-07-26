@@ -3036,7 +3036,9 @@ local target = msg.to.id
 			return get_rules(msg, data)
 		end
 
-		
+		if matches[1] == 'help' and not is_owner(msg) then
+			text = "از دستور  /Superhelp  استفاده کنید!"
+			reply_msg(msg.id, text, ok_cb, false)
 		elseif matches[1] == 'help' and is_owner(msg) then
 			local name_log = user_print_name(msg.from)
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /superhelp")
