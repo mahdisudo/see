@@ -1345,7 +1345,7 @@ function show_supergroup_settingsmod(msg, target)
   local text =  text.."#"..settings.lock_tgservice.." lock tgservice : "..settings.lock_tgservice.."\n"
   local text =  text.."#"..settings.lock_sticker.."lock stickers: "..settings.lock_sticker.."\n"
   local text =  text.."#"..settings.tag.."lock tag(#): "..settings.tag.."\n"
-  local text =  text.."#"..settings.username.." lock tag(@): "..settings.username.."\n"
+  local text =  text.."#"..settings.username.." lock username(@): "..settings.username.."\n"
   local text =  text.."#"..settings.english.." lock english: "..settings.english.."\n"
   local text =  text.."#"..settings.fwd.."lock fwd: "..settings.fwd.."\n"
   local text =  text.."#"..settings.fosh.." lock fosh: "..settings.fosh.."\n"
@@ -3009,7 +3009,7 @@ local target = msg.to.id
 			if not has_mutes(chat_id) then
 				set_mutes(chat_id)
 				local text = mutes_list(chat_id)
-			eply_msg(msg.id, text, ok_cb, false)
+			reply_msg(msg.id, text, ok_cb, false)
 			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup muteslist")
 			return mutes_list(chat_id)
